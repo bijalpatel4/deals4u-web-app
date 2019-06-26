@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## For this project make sure latest version of node installed
+
+## Clone this repo using below command
+
+git clone https://github.com/bijalpatel4/deals4u-web-app.git
+
+## For installing all the dependencies run below command
+
+npm install
+
 ## Available Scripts
 
 In the project directory, you can run:
