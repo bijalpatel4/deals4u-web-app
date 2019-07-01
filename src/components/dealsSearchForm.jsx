@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
-class HomePage extends Component {
-  state = {};
+class DealsSearchForm extends Component {
+  zipCode = React.createRef();
+  handleSubmit = e => {
+    e.preventDefault();
+    const zipCode = this.zipCode.current.value;
+    this.props.history.push("/searchdeals/" + zipCode + "");
+    console.log(zipCode);
+  };
   render() {
     return (
       <div className="searchForm">
@@ -11,20 +16,24 @@ class HomePage extends Component {
             Search great deals near you
           </h1>
         </div>
-        <form className="form-inline md-form form-sm active-cyan-2 mt-6">
+        <form
+          onSubmit={this.handleSubmit}
+          className="form-inline md-form form-sm active-cyan-2 mt-6"
+        >
           <input
+            ref={this.zipCode}
             className="form-control form-control-lg mr-2 w-75"
             type="text"
             placeholder="Enter zip code.."
             aria-label="Search"
           />
-          <Link to="/deals" className="btn btn-primary btn-lg ml-2">
+          <button type="submit" className="btn btn-primary btn-lg ml-2">
             <i className="fa fa-search" /> Search
-          </Link>
+          </button>
         </form>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default DealsSearchForm;

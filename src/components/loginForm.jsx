@@ -1,12 +1,23 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Joi from "joi-browser";
 import Input from "./input";
 import { stringLiteral } from "@babel/types";
+import { login } from "../service/loginService";
+
 class LoginForm extends Component {
   state = { account: { username: "", password: "" }, errors: {} };
   schema = {
     username: Joi.string().required(),
     password: Joi.string().required()
+  };
+
+  doSubmit = () => {
+    const { account } = this.state;
+    const data = login(account.username, account.password);
+
+    localStorage.setItem("user", JSON.stringify(data));
+    window.location = "/";
   };
   validate = () => {
     const errors = {};
@@ -20,10 +31,9 @@ class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const errors = this.validate();
-    console.log(errors);
     this.setState({ errors });
     if (errors) return;
-    console.log("Submitted");
+    this.doSubmit();
   };
 
   validateProperty = ({ name, value }) => {
@@ -62,13 +72,13 @@ class LoginForm extends Component {
             name="username"
             value={account.username}
             onChange={this.handleChange}
-            error={errors.username}
+            // error={errors.username}
           />
           <Input
             name="password"
             value={account.password}
             onChange={this.handleChange}
-            error={errors.password}
+            // error={errors.password}
           />
 
           <div className="d-flex justify-content-around">
@@ -99,7 +109,7 @@ class LoginForm extends Component {
           </button>
           <p>
             Not a member?
-            <a href="/">Register</a>
+            <Link to="/">Register</Link>
           </p>
         </form>
       </div>

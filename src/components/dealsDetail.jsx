@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import deals from "../data/fakeDeals";
+// import deals from "../data/fakeDeals";
 import DealDetailItem from "./dealDetailItem";
+import { getDealById } from "../service/fakeDealsService";
 
 class DealDetail extends Component {
-  findDeal(id) {
-    const ds = deals.filter(deals => deals._id === id);
-    return ds[0];
-  }
+  // findDeal(id) {
+  //   const ds = deals.filter(deals => deals._id === id);
+  //   return ds[0];
+  // }
 
   render() {
     //console.log(this.findDeal(this.props.match.params.id)[0]);
@@ -15,7 +16,7 @@ class DealDetail extends Component {
       <div>
         <div>
           <div>
-            <DealDetailItem dealdetailpage={this.findDeal(match.params.id)} />
+            <DealDetailItem dealdetailpage={getDealById(match.params.id)} />
           </div>
         </div>
       </div>
