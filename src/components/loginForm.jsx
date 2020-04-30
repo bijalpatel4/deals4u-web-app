@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Joi from "joi-browser";
 import Input from "./input";
-import { stringLiteral } from "@babel/types";
 import { login } from "../service/loginService";
 
 class LoginForm extends Component {
@@ -109,7 +108,7 @@ class LoginForm extends Component {
           </button>
           <p>
             Not a member?
-            <Link to="/">Register</Link>
+            <Link to="/signup">Register</Link>
           </p>
         </form>
       </div>
