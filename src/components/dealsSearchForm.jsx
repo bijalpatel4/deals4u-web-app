@@ -6,7 +6,6 @@ class DealsSearchForm extends Component {
     e.preventDefault();
     const zipCode = this.zipCode.current.value;
     this.props.history.push("/searchdeals/" + zipCode + "");
-    console.log(zipCode);
   };
   render() {
     return (

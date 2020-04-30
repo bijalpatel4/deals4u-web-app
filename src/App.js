@@ -10,6 +10,9 @@ import LoginForm from "./components/loginForm";
 import SignUpForm from "./components/signUpForm";
 import Logout from "./components/logout";
 import DealsSearchForm from "./components/dealsSearchForm";
+import Cart from "./components/Cart/Cart";
+import { Provider } from "react-redux";
+import store from "./store";
 
 class App extends Component {
   state = {};
@@ -22,10 +25,11 @@ class App extends Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <Provider store={store}>
         <NavBar currentUser={this.state.currentUser} />
         <div className="container center">
           <Switch>
+            <Route path="/cart" component={Cart} />
             <Route path="/signup" component={SignUpForm} />
             <Route path="/login" component={LoginForm} />
             <Route path="/logout" component={Logout} />
@@ -35,7 +39,7 @@ class App extends Component {
           </Switch>
         </div>
         {/* <DealsPage deals={this.state.deals} onViewDeal={this.handleViewDeal} /> */}
-      </React.Fragment>
+      </Provider>
     );
   }
 }

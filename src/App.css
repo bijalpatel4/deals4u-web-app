@@ -92,3 +92,146 @@ body {
   width: 70%;
   margin: 17%;
 }
+
+.addToCart {
+  width: 100%;
+  border: none;
+  background-color: darkgray;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgb(104, 34, 121);
+}
+
+.card:hover .addToCart {
+  bottom: 50px;
+  opacity: 1;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.cartNumbers {
+  color: indigo;
+  background-color: aliceblue;
+  font-weight: bolder;
+  font-size: 15px;
+  border-radius: 40%;
+  padding: 5px;
+  margin: 5px;
+}
+
+/*----------Cart Page--------------*/
+
+.container-products {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+/* .container-products {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 50px;
+} */
+
+.container-products ion-icon {
+  font-size: 25px;
+  color: blue;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.product-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid lightgray;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.procuct-title {
+  width: 45%;
+  font-weight: bold;
+}
+
+.price {
+  width: 15%;
+  font-weight: bold;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  width: 30%;
+  font-weight: bold;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+}
+
+.total {
+  width: 10%;
+  font-weight: bold;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+}
+
+.product {
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.product ion-icon {
+  cursor: pointer;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products img {
+  width: 100px;
+  height: 60px;
+}
+
+.basketTotalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.basketTotalTitle {
+  width: 30%;
+}
+
+.basketTotal {
+  width: 10%;
+}
+
+@media (max-width: 500px) {
+  .sm-hide {
+    display: none;
+  }
+  .products,
+  .product-header {
+    justify-content: center;
+  }
+  .basketTotalContainer {
+    padding-right: 8%;
+  }
+}
