@@ -5,10 +5,10 @@ const deals = [
     description: "Adidas Ultraboost Shoes",
     info:
       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-    price: 45.87,
+    price: 12.0,
     zipCode: 94538,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181",
@@ -16,10 +16,10 @@ const deals = [
     description: "Adidas Sneaker",
     info:
       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-    price: 39.47,
+    price: 12.0,
     zipCode: 94533,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd471817",
@@ -27,10 +27,10 @@ const deals = [
     description: "Adidas Running Shoes",
     info:
       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-    price: 86.19,
+    price: 45.87,
     zipCode: 94538,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd471819",
@@ -41,7 +41,7 @@ const deals = [
     price: 25.0,
     zipCode: 94543,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181a",
@@ -52,7 +52,7 @@ const deals = [
     price: 34.99,
     zipCode: 94538,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181b",
@@ -63,7 +63,7 @@ const deals = [
     price: 45.99,
     zipCode: 94538,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181e",
@@ -74,7 +74,7 @@ const deals = [
     price: 86.19,
     zipCode: 94620,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181f",
@@ -85,7 +85,7 @@ const deals = [
     price: 14.97,
     zipCode: 95548,
     count: 0,
-    inCart: false
+    inCart: false,
   },
   {
     _id: "5b21ca3eeb7f6fbccd471821",
@@ -96,8 +96,8 @@ const deals = [
     price: 25.0,
     zipCode: 94620,
     count: 0,
-    inCart: false
-  }
+    inCart: false,
+  },
 ];
 
 export default deals;

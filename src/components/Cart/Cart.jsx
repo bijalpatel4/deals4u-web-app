@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
+import { productQuantity } from "../../client/action/productQuantity";
 
-const Cart = ({ basketProps }) => {
-  console.log("In Cart ", basketProps);
+const Cart = ({ basketProps, productQuantity }) => {
   let productInCart = [];
-  basketProps.products.deals.find(item => {
+  basketProps.products.deals.find((item) => {
     if (item.inCart) {
       productInCart.push(item);
     }
@@ -17,19 +17,21 @@ const Cart = ({ basketProps }) => {
           <img src={product.imageURL} alt={product.description} />
           <span className="sm-hide">{product.description}</span>
         </div>
-        <div className="price sm-hide">${product.price}.00</div>
+        <div className="price sm-hide">${product.price}</div>
         <div className="quantity">
           <ion-icon
+            onClick={() => productQuantity("decrease", product._id)}
             className="decrease"
             name="arrow-back-circle-outline"
           ></ion-icon>
           <span>{product.count}</span>
           <ion-icon
+            onClick={() => productQuantity("increase", product._id)}
             className="increase"
             name="arrow-forward-circle-outline"
           ></ion-icon>
         </div>
-        <div className="total">${product.count * product.price}.00</div>
+        <div className="total">${product.count * product.price}</div>
       </React.Fragment>
     );
   });
@@ -44,12 +46,12 @@ const Cart = ({ basketProps }) => {
       <div className="products">{productInCart}</div>
       <div className="basketTotalContainer">
         <h4 className="basketTotalTitle">Basket Total</h4>
-        <h4 className="basketTotal">{basketProps.cartCost}.00</h4>
+        <h4 className="basketTotal">{basketProps.cartCost}</h4>
       </div>
     </div>
   );
 };
-const mapStateToProps = state => ({
-  basketProps: state.basketState
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
 });
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, { productQuantity })(Cart);
